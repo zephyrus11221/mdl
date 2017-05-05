@@ -4,11 +4,11 @@ from display import *
 from matrix import *
 from draw import *
 
-def run(filename):
+def run(filename, color):
     """
     This function runs an mdl script
     """
-    color = [255, 255, 255]
+    #color = [255, 255, 255]
     tmp = new_matrix()
     ident( tmp )
 
@@ -105,6 +105,9 @@ def run(filename):
             print 'COLOR CHANGE'
             color = [int(comm[1]), int(comm[2]), int(comm[3])]
 
-        elif comm[0] == 'display':
-            display(screen)
+        elif comm[0] == 'display' or comm[0] == 'save':
+            if comm[0] == 'display':
+                display(screen)
+            else:
+                save_extension(screen, comm[1])
         print comm
