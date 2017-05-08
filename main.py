@@ -1,7 +1,7 @@
 from script import run
 import sys
 
-color = [0, 255, 0]
+color = [60, 160, 60]
 
 if len(sys.argv) == 2:
     run(sys.argv[1], color)
